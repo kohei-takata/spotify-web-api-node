@@ -232,6 +232,7 @@ SpotifyWebApi.prototype = {
   search: function(query, types, options, callback) {
     return WebApiRequest.builder(this.getAccessToken())
       .withPath('/v1/search/')
+      .withHeaders({ 'Accept-Language': 'ja' })
       .withQueryParameters(
         {
           type: types.join(','),
